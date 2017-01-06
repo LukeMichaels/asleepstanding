@@ -1,0 +1,24 @@
+# DHX Advertising Wordpress .gitignore
+
+# Ignore Mac DS_Store files
+.DS_Store
+
+# Ignore everything in the root except the "wp-content" directory.
+/*
+!.gitignore
+!wp-content/
+
+# Ignore everything in the "wp-content" directory, except the "plugins" and "themes" directories.
+wp-content/*
+!wp-content/plugins/
+!wp-content/themes/
+
+# Ignore everything in the "themes" directory, except the themes you specify
+wp-content/themes/*
+!wp-content/themes/index.php
+!wp-content/themes/asleepstanding/
+
+# Ignore these too
+wp-content/themes/asleepstanding/node_modules
+wp-content/themes/asleepstanding/.sass-cache
+wp-content/themes/asleepstanding/css/sass/.sass-cache

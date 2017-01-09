@@ -74,8 +74,8 @@ get_header( 'shop' ); ?>
       do_action( 'woocommerce_after_main_content' );
     ?>
 
-  </div>
+  </div><!-- .shop-wrap -->
 
-</div>
+</div><!-- .row -->
 
 <?php get_footer( 'shop' ); ?>

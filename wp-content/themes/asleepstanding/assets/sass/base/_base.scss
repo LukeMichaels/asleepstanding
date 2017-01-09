@@ -116,3 +116,15 @@ ol {
   }
 
 } // ol
+
+.button {
+  padding: 9px;
+  margin-top: 0;
+  color: $white;
+  background-color: $light;
+  border-radius: 3px;
+  border: 1px solid $light;
+  &:hover {
+    background-color: $dark;
+  }
+}

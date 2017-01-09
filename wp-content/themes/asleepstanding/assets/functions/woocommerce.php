@@ -18,3 +18,12 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 function woocommerce_support() {
   add_theme_support( 'woocommerce' );
 }
+
+// Remove default WooCommerce stylesheets
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+// Hook the product description into the product page's summary
+function woocommerce_template_product_description() {
+  wc_get_template( 'single-product/tabs/description.php' );
+}
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_product_description', 20 );

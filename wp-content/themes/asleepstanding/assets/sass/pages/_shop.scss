@@ -1,3 +1,4 @@
+// The main shop page & shop category pages
 .shop-wrap {
 
   // hiding some default features we don't want
@@ -12,58 +13,226 @@
     width: 100%;
   }
 
-  li.product {
-    width: 31% !important;
-    margin-right: 3.5% !important;
-    margin-bottom: 40px !important;
+  .product {
+    width: 31%;
+    margin-right: 3.5%;
+    margin-bottom: 40px;
     &:nth-child(3n+3) {
-      margin-right: 0 !important;
+      margin-right: 0;
     }
     @include respond-to(b-750) {
-      width: 48% !important;
-      margin-right: 4% !important;
+      width: 48%;
+      margin-right: 4%;
       &:nth-child(3n+3) {
-        margin-right: 4% !important;
+        margin-right: 4%;
       }
       &:nth-child(2n+2) {
-        margin-right: 0 !important;
+        margin-right: 0;
       }
     }
     @include respond-to(b-550) {
-      width: 100% !important;
-      margin-right: 0% !important;
+      width: 100%;
+      margin-right: 0%;
       &:nth-child(3n+3) {
-        margin-right: 0% !important;
+        margin-right: 0%;
       }
       &:nth-child(2n+2) {
-        margin-right: 0 !important;
+        margin-right: 0;
       }
     }
 
     img {
-      width: 100% !important;
-      margin-bottom: 10px !important;
+      width: 100%;
+      margin-bottom: 10px;
     }
 
     h3 {
-      padding: 0 0 3px !important;
+      padding: 0 0 3px;
     }
 
     .price {
-      color: $light !important;
-      padding: 0 0 7px !important;
-      margin-bottom: 0 !important;
+      display: block;
+      width: 100%;
+      color: $light;
+      padding: 0 0 7px;
+      margin-bottom: 10px;
     }
 
     .amount {
-      font-size: 0.75rem !important;
-      line-height: 0.75rem !important;
-    }
-
-    .button {
-      margin-top: 0 !important;
+      font-size: 0.75rem;
+      line-height: 0.75rem;
     }
 
   } // .product
 
 } // .shop-wrap
+
+// the product display page
+.single-product-wrap {
+
+  // hiding some default features we don't want
+  .woocommerce-breadcrumb, .woocommerce-tabs {
+    display: none;
+  }
+
+  .product {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .images {
+    width: 64%;
+
+    .image-main {
+      min-height: 860px;
+    }
+
+    .image-thumbnails {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+
+      img {
+        width: 200px;
+        margin-right: 10px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+    } // .image-thumbnails
+
+    a {
+      display: block;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+
+  } // .images
+
+  .summary {
+    width: 31%;
+
+    h1 {
+      margin-top: 40px;
+    }
+
+    .product_meta {
+      display: none;
+      width: 100%;
+      margin-top: 10px;
+      font-size: 0.75rem;
+    }
+
+    .cart {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+
+      .quantity {
+        width: 60px;
+        margin-right: 10px;
+      }
+
+      input {
+        width: 60px;
+        padding: 7px;
+      }
+
+    } // .cart
+
+  } // .summary
+
+  .related {
+    width: 100%;
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    .products {
+      padding: 0;
+      margin: 40px 0;
+      list-style-image: none;
+
+      li {
+        padding: 0;
+        margin: 0;
+        background: none;
+      }
+
+    } // .products
+
+    .product {
+      width: 31%;
+      margin-right: 3.5%;
+      margin-bottom: 40px;
+      &:nth-child(3n+3) {
+        margin-right: 0;
+      }
+      @include respond-to(b-750) {
+        width: 48%;
+        margin-right: 4%;
+        &:nth-child(3n+3) {
+          margin-right: 4%;
+        }
+        &:nth-child(2n+2) {
+          margin-right: 0;
+        }
+      }
+      @include respond-to(b-550) {
+        width: 100%;
+        margin-right: 0%;
+        &:nth-child(3n+3) {
+          margin-right: 0%;
+        }
+        &:nth-child(2n+2) {
+          margin-right: 0;
+        }
+      }
+  
+      img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+  
+      h3 {
+        padding: 0 0 3px;
+      }
+  
+      .price {
+        display: block;
+        width: 100%;
+        color: $light;
+        padding: 0 0 7px;
+        margin-bottom: 10px;
+      }
+  
+      .amount {
+        font-size: 0.75rem;
+        line-height: 0.75rem;
+      }
+  
+      .button {
+        padding: 10px;
+        margin-top: 0;
+        color: $white;
+        background-color: $light;
+        border-radius: 3px;
+        &:hover {
+          background-color: $dark;
+        }
+      }
+  
+    } // .product
+
+  } // .related
+
+} // .single-product-wrap

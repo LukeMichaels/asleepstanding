@@ -1,0 +1,1 @@
+!function($,n,o){$(function(){"use strict";function n(){$("#wrapper").hasClass("show-nav")?$("#wrapper").removeClass("show-nav"):$("#wrapper").addClass("show-nav")}var o=$(".hamburger");o.on("click",function(){o.toggleClass("is-active")}),$(function(){$("#off-canvas-button").click(function(){n()})}),$("body").on("contextmenu","img",function(){return!1})})}(jQuery,this);

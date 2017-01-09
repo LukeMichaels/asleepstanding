@@ -1,0 +1,47 @@
+.post-page {
+
+  img {
+    width: 100%;
+  }
+
+  .page-content {
+    width: 100%;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  .post-body {
+    width: 100%;
+    padding-bottom: 17px;
+
+    p {
+      width: 66%;
+    }
+
+  } // .post-body
+
+  .prev-next-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: $light;
+
+    .prev-button {
+      margin-right: 10px;
+    }
+
+    .next-button {
+      //margin-left: auto;
+    }
+
+    a {
+      font-size: 0.75rem;
+      line-height: 0.75rem;
+    }
+
+  } // .prev-next-buttons
+
+} // .post-page

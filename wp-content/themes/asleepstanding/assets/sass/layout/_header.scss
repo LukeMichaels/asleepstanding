@@ -1,3 +1,298 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the header of the site/application.
-// -----------------------------------------------------------------------------
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 40px 0;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    height: 170px;
+    margin-right: auto;
+    @include respond-to(b-390) {
+      width: 140px;
+      height: 140px;
+    }
+    @include respond-to(b-315) {
+      width: 100px;
+      height: 100px;
+    }
+    @include respond-to(b-270) {
+      width: 50px;
+      height: 50px;
+    }
+
+    img {
+      width: 100%;
+    }
+
+  } // .logo
+
+  .site-navigation {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    height: 170px;
+    margin-left: auto;
+    @include respond-to(b-630) {
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+    @include respond-to(b-390) {
+      height: 140px;
+    }
+    @include respond-to(b-315) {
+      height: 100px;
+    }
+    @include respond-to(b-270) {
+      height: 50px;
+    }
+  }
+
+  .cart-button {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-end;
+    width: 100%;
+    @include respond-to(b-630) {
+      align-self: center;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      &:hover {
+        .cart-count {
+          color: $dark;
+        }
+      }
+    }
+
+    .cart-count {
+      color: $light;
+      font-size: 1.125rem;
+      font-weight: $bold;
+    }
+
+    .cart-icon {
+      width: 30px;
+      margin-left: 5px;
+
+      img {
+        width: 100%;
+      }
+
+    } // .cart-icon
+
+  } // .cart-button
+
+  .header-nav {
+    display: flex;
+    justify-content: flex-end;
+    align-self: flex-start;
+    width: 100%;
+    @include respond-to(b-630) {
+      display: none;
+    }
+
+    li {
+      float: left;
+      padding: 0;
+      margin-right: 29px;
+      background: none; // remove custom bullets
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    a {
+      color: $light;
+      text-transform: uppercase;
+      font-size: 1.125rem;
+      font-weight: $bold;
+      &:hover {
+        color: $dark;
+      }
+    }
+
+  }
+
+  .off-canvas-button {
+    display: none;
+    @include respond-to(b-630) {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+  }
+
+} // header
+
+
+// off-canvas menu
+#off-canvas-menu {
+  width: 235px;
+  min-height: 100vh;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -235px;
+  padding: 40px 20px 0;
+  background: $dark;
+
+  a {
+    color: $white;
+    text-transform: uppercase;
+    font-size: 0.9375rem;
+    font-weight: $bold;
+    line-height: 2rem;
+    &:hover {
+      color: $light;
+    }
+  }
+
+  ul {
+    width: 100%;
+  }
+
+  li {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background: none;
+  }
+
+  /* Leaving this here in case we add sub-items to the menu in the future
+  .menu-item-has-children {
+    margin-bottom: 20px;
+  }
+  .sub-menu {
+
+    a {
+      color: $light;
+      font-size: 0.9375rem;
+      font-weight: 300;
+      line-height: 1.6;
+      &:hover {
+        color: $light-gray;
+      }
+    }
+
+  }
+  */ // .sub-menu
+
+} // #off-canvas-menu
+
+#wrapper.show-nav #canvas {
+  -webkit-transform: translateX(-235px);
+  transform: translateX(-235px);
+}
+
+
+// Veganburger ;-)
+// Created by Jonathan Suh: https://jonsuh.com/hamburgers/
+// Settings
+// ================================================================
+$hamburger-padding-x                        : 15px !default;
+$hamburger-padding-y                        : 15px !default;
+$hamburger-layer-width                      : 40px !default;
+$hamburger-layer-height                     : 3px !default;
+$hamburger-layer-spacing                    : 6px !default;
+$hamburger-layer-color                      : $light !default;
+$hamburger-hover-color                      : $dark !default;
+$hamburger-layer-border-radius              : 4px !default;
+$hamburger-hover-opacity                    : 1 !default;
+$hamburger-hover-transition-duration        : 0.15s !default;
+$hamburger-hover-transition-timing-function : linear !default;
+
+// To use CSS filters as the hover effect instead of opacity,
+// set $hamburger-hover-use-filter as true and
+// change the value of $hamburger-hover-filter accordingly.
+$hamburger-hover-use-filter : false !default;
+$hamburger-hover-filter     : opacity(50%) !default;
+.menu-link {
+  display: none;
+}
+.hamburger {
+  //padding: $hamburger-padding-y $hamburger-padding-x;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: $hamburger-hover-transition-duration;
+  transition-timing-function: $hamburger-hover-transition-timing-function;
+
+  &:hover {
+    @if $hamburger-hover-use-filter == true {
+      filter: $hamburger-hover-filter;
+    }
+    @else {
+      opacity: $hamburger-hover-opacity;
+    }
+    .hamburger-inner, .hamburger-inner:before, .hamburger-inner:after {
+      background-color: $hamburger-hover-color;
+    }
+  }
+
+} // .hamburger
+
+.hamburger-box {
+  width: $hamburger-layer-width;
+  height: $hamburger-layer-height * 3 + $hamburger-layer-spacing * 2;
+  position: relative;
+}
+
+.hamburger-inner {
+  top: 50%;
+  margin-top: $hamburger-layer-height / -2;
+
+  &,
+  &::before,
+  &::after {
+    width: $hamburger-layer-width;
+    height: $hamburger-layer-height;
+    background-color: $hamburger-layer-color;
+    border-radius: $hamburger-layer-border-radius;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+  }
+
+  &::before {
+    top: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  }
+
+  &::after {
+    bottom: ($hamburger-layer-spacing + $hamburger-layer-height) * -1;
+  }
+
+} // .hamburger-inner
+
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.3s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--spin .hamburger-inner::before {
+  transition: top 0.1s 0.34s ease-in, opacity 0.1s ease-in; }
+.hamburger--spin .hamburger-inner::after {
+  transition: bottom 0.1s 0.34s ease-in, transform 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.14s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+.hamburger--spin.is-active .hamburger-inner::before {
+  top: 0;
+  opacity: 0;
+  transition: top 0.1s ease-out, opacity 0.1s 0.14s ease-out; }
+.hamburger--spin.is-active .hamburger-inner::after {
+  bottom: 0;
+  transform: rotate(-90deg);
+  transition: bottom 0.1s ease-out, transform 0.3s 0.14s cubic-bezier(0.215, 0.61, 0.355, 1); }

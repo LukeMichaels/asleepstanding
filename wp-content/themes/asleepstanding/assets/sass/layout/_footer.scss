@@ -1,3 +1,69 @@
-// -----------------------------------------------------------------------------
-// This file contains all styles related to the footer of the site/application.
-// -----------------------------------------------------------------------------
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  margin: 32px 0 40px;
+
+  .footer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    margin-bottom: 1px;
+
+    ul {
+      padding: 0;
+      margin: 0;
+      list-style-image: none;
+    }
+
+    li {
+      float: left;
+      padding: 0;
+      margin-left: 29px;
+      background: none; // remove custom bullets
+      @include respond-to(b-520) {
+        margin-left: 19px;
+      }
+      @include respond-to(b-390) {
+        margin-left: 10px;
+      }
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+
+    a {
+      color: $light;
+      text-transform: uppercase;
+      font-size: 1.125rem;
+      line-height: 1.125rem;
+      font-weight: $bold;
+      @include respond-to(b-520) {
+        text-align: center;
+        font-size: 0.8rem;
+      }
+      &:hover {
+        color: $dark;
+      }
+    }
+
+  } // .footer-nav
+
+  .copyright {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    color: $color;
+    text-transform: uppercase;
+    font-size: 1rem;
+    @include respond-to(b-520) {
+      text-align: center;
+      font-size: 0.6rem;
+    }
+  }
+
+} // footer

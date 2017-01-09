@@ -7,29 +7,23 @@
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <?php $hero_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'hero' ); ?>
-        <section class="hero" style="background: url('<?php echo $hero_image[0]; ?>') no-repeat center center; background-size: cover;">
+        <section class="hero">
           <div class="row">
-            <div class="content-wrap">
-              <div class="headline">
-                <h1><?php the_title(); ?></h1>
-              </div>
-            </div>
+            <img src="<?php echo $hero_image[0]; ?>">
           </div>
         </section>
 
         <section class="page-content">
           <div class="row">
 
-            <div class="author-date">
-              <span class="author">Published by: <?php the_author(); ?> </span> - 
-              <span class="date"><?php the_time('F j, Y'); ?></span>
+            <div class="title">
+              <h1><?php the_title(); ?></h1>
             </div>
 
             <div class="post-body">
               <?php the_content(); ?>
             </div>
 
-            
             <?php if( has_tag() ) { ?>
               <div class="tags">
                 <?php the_tags( __( 'Tags: ', 'juno' ), ', '); // Separated by commas  ?>

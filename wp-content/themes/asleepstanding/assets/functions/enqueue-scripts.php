@@ -5,7 +5,10 @@ function site_scripts() {
   // Modernizr
   wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/lib/modernizr.flexbox.js', array(), '2.7.1');
 
-  // Adding scripts file in the footer
+  // Conditionizr
+  wp_enqueue_script( 'conditionizr', get_template_directory_uri() . '/assets/js/lib/conditionizr.min.js', array(), '4.4.0');
+
+  // Custom Scripts
   wp_enqueue_script( 'site-js', get_template_directory_uri() . '/assets/js/min/scripts-min.js', array( 'jquery' ), '', true );
 
   // Hamburger Menu
@@ -14,9 +17,5 @@ function site_scripts() {
   // Register main stylesheet
   wp_enqueue_style( 'site-css', get_template_directory_uri() . '/assets/css/main.css', array(), '', 'all' );
 
-  // Comment reply script for threaded comments
-  if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-    wp_enqueue_script( 'comment-reply' );
-  }
 }
 add_action('wp_enqueue_scripts', 'site_scripts', 999);

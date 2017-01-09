@@ -19,15 +19,100 @@ html {
   box-sizing: inherit;
 } 
 
-/**
- * Basic styles for links
- */
-a {
-  color: $brand-color;
-  text-decoration: none;
+body {
+  background-color: $white;
+}
 
-  @include on-event {
-    color: $text-color;
-    text-decoration: underline;
+// our "grid system"
+.wrapper {
+  @extend %clearfix;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.page-wrap {
+  @extend %clearfix;
+  width: 100%;
+  background-color: $white;
+}
+
+.row {
+  
+}
+
+.row {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1020px;
+  padding-right: 10px;
+  padding-left: 10px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  @include respond-to(row) {
+    padding-right: 20px;
+    padding-left: 20px;
   }
 }
+
+.col {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+// basic page styling
+a {
+  color: $light;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.page-content {
+  flex: 0 1 100%;
+}
+
+ul {
+  color: $color;
+  list-style-position: inside;
+  list-style-image: url('../images/ui/bullet.png');
+
+  li {
+    color: $color;
+    background: url('../images/ui/bullet.png') no-repeat left 17px;
+    padding: 3px 0px 3px 16px;
+    text-indent: 0;
+    list-style: none;
+    margin: 0;
+  }
+
+} // ul
+
+ol {
+  color: $color;
+  list-style-position: inside;
+  list-style-type: decimal;
+
+  li {
+    color: $color;
+    padding-left: 18px;
+    text-indent: -18px;
+  }
+
+} // ol

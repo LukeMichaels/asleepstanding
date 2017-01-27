@@ -7,7 +7,7 @@
 		"uuidString": "FAD9B338-9C3D-4629-9B6E-DD33E1975550"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25504",
 "files": {
 	"\/404.php": {
 		"ft": 8192,
@@ -313,6 +313,12 @@
 		"oAP": "\/assets\/sass\/.sass-cache\/5b693d51ce3f2450604fa6f9d88eccf73a555dc4\/_normalize.scssc",
 		"oF": 0
 		},
+	"\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_cart.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_cart.scssc",
+		"oF": 0
+		},
 	"\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_home-updates.scssc": {
 		"ft": 8192,
 		"oA": 1,
@@ -413,24 +419,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/assets\/sass\/base\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 0,
-		"oAP": "\/assets\/sass\/base\/README.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
 	"\/assets\/sass\/components\/_button.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -443,24 +431,6 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/assets\/sass\/components\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 0,
-		"oAP": "\/assets\/sass\/components\/README.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
 		},
 	"\/assets\/sass\/layout\/_footer.scss": {
 		"aP": 0,
@@ -488,24 +458,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/assets\/sass\/layout\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 0,
-		"oAP": "\/assets\/sass\/layout\/README.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
 	"\/assets\/sass\/login.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -531,6 +483,19 @@
 		"oF": 2,
 		"oS": 3,
 		"uL": 0
+		},
+	"\/assets\/sass\/pages\/_cart.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/pages\/_cart.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
 		},
 	"\/assets\/sass\/pages\/_home-updates.scss": {
 		"aP": 0,
@@ -571,42 +536,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/assets\/sass\/pages\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 0,
-		"oAP": "\/assets\/sass\/pages\/README.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
-	"\/assets\/sass\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 0,
-		"oAP": "\/assets\/sass\/README.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
 	"\/assets\/sass\/utils\/_functions.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -646,24 +575,6 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/assets\/sass\/utils\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 0,
-		"oAP": "\/assets\/sass\/utils\/README.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
-		},
 	"\/assets\/sass\/vendor\/_normalize.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -676,24 +587,6 @@
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
-		},
-	"\/assets\/sass\/vendor\/README.md": {
-		"cS": 0,
-		"eF": 1,
-		"eL": 1,
-		"eLB": 0,
-		"ema": 1,
-		"eSQ": 1,
-		"ft": 4096,
-		"oA": 0,
-		"oAP": "\/assets\/sass\/vendor\/README.html",
-		"oF": 0,
-		"oFM": 0,
-		"oS": 0,
-		"pHT": 0,
-		"pME": 1,
-		"rFN": 0,
-		"uCM": 0
 		},
 	"\/author.php": {
 		"ft": 8192,
@@ -2282,6 +2175,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -2821,6 +2718,10 @@
 		"prefer-const": {
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
+			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
 			},
 		"prefer-numeric-literals": {
 			"active": 0,

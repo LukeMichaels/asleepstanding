@@ -11,12 +11,13 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     width: 100%;
+    padding: 0;
   }
 
   .product {
     width: 31%;
     margin-right: 3.5%;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     &:nth-child(3n+3) {
       margin-right: 0;
     }
@@ -84,9 +85,14 @@
 
   .images {
     width: 64%;
+    @include respond-to(b-720) {
+      order: 2;
+      width: 100%;
+    }
 
     .image-main {
-      min-height: 860px;
+      width: 100%;
+      //min-height: 860px;
     }
 
     .image-thumbnails {
@@ -118,6 +124,10 @@
 
   .summary {
     width: 31%;
+    @include respond-to(b-720) {
+      order: 1;
+      width: 100%;
+    }
 
     h1 {
       margin-top: 40px;
@@ -184,8 +194,12 @@
 
   .related {
     width: 100%;
+    @include respond-to(b-720) {
+      order: 3;
+    }
 
     h2 {
+      width: 100%;
       margin-top: 40px;
     }
 
@@ -196,9 +210,14 @@
 
       li {
         padding: 0;
-        margin: 0;
+        margin: 0 0 40px 0;
         background: none;
-      }
+
+        a {
+          width: 100%;
+        }
+
+      } // li
 
     } // .products
 
@@ -291,3 +310,26 @@
   } // .woocommerce-message
 
 } // .product-template-default
+
+.woocommerce-error {
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1020px;
+  padding-right: 10px;
+  padding-left: 10px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  @include respond-to(row) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+} // .woocommerce-error

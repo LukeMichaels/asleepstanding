@@ -7,28 +7,36 @@
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
         <?php $hero_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'hero' ); ?>
+<!--
         <section class="hero">
           <div class="row">
             <img src="<?php echo $hero_image[0]; ?>">
           </div>
         </section>
+-->
 
         <section class="page-content">
           <div class="row">
 
-            <div class="title">
-              <h1><?php the_title(); ?></h1>
+            <div class="col">
+              <img src="<?php echo $hero_image[0]; ?>">
             </div>
 
-            <div class="post-body">
-              <?php the_content(); ?>
-            </div>
-
-            <?php if( has_tag() ) { ?>
-              <div class="tags">
-                <?php the_tags( __( 'Tags: ', 'juno' ), ', '); // Separated by commas  ?>
+            <div class="col">
+              <div class="title">
+                <h1><?php the_title(); ?></h1>
               </div>
-            <?php } ?>
+  
+              <div class="post-body">
+                <?php the_content(); ?>
+              </div>
+  
+              <?php if( has_tag() ) { ?>
+                <div class="tags">
+                  <?php the_tags( __( 'Tags: ', 'juno' ), ', '); // Separated by commas  ?>
+                </div>
+              <?php } ?>
+            </div>
 
           </div>
         </section>

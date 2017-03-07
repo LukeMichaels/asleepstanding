@@ -22,10 +22,16 @@
 
   .product-thumbnail {
     width: 20%;
+    @include respond-to(b-995) {
+      width: 23%;
+    }
   }
 
   .product-name {
     width: 33%;
+    @include respond-to(b-995) {
+      width: 74%;
+    }
   }
 
   .variation {
@@ -84,7 +90,14 @@
   }
 
   .cart_item {
+    //display: flex;
+    //justify-content: flex-end;
     width: 100%;
+/*
+    @include respond-to(b-995) {
+      flex-wrap: wrap;
+    }
+*/
   }
 
   .actions {

@@ -45,3 +45,19 @@
   } // .prev-next-buttons
 
 } // .post-page
+
+.single-post {
+
+  .page-content {
+
+    .col:first-child {
+      width: 66%;
+    }
+
+    .col:last-child {
+      width: 33%;
+    }
+
+  } // .page-content
+
+} // .single-post

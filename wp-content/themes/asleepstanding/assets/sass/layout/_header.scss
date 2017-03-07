@@ -117,6 +117,65 @@ header {
       }
     }
 
+  } // .header-nav
+
+  .menu-item-has-children {
+    position: relative;
+  }
+
+  .sub-menu {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 270px;
+    position: absolute;
+    padding: 29px 38px;
+    margin: 10px auto 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: $dark;
+    z-index: 5;
+    // the triangle above the dropdown
+    &:before {
+      content: '';
+      width: 0;
+      height: 0;
+      margin-top: -40px;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 15px solid $dark;
+    }
+
+    li {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      height: auto;
+      padding: 5px 0;
+      color: $white;
+      font-size: 0.9375rem;
+      font-weight: $regular;
+      &:hover {
+        color: $light;
+        border-top: 0;
+      }
+    }
+
+  } // .sub-menu
+
+  .menu-item-has-children:hover {
+    .sub-menu {
+      display: flex;
+    }
   }
 
   .off-canvas-button {

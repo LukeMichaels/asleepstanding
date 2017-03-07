@@ -1,115 +1,56 @@
 <?php
-/* This page walks you through creating 
-a custom post type and taxonomies. You
-can edit this one or copy the following code 
-to create another one. 
+// Register Custom Post Type
+function custom_post_type() {
 
-I put this in a separate file so as to 
-keep it organized. I find it easier to edit
-and change things if they are concentrated
-in their own file.
-*/
+  $labels = array(
+    'name'                  => _x( 'portfolio pieces', 'Post Type General Name', 'text_domain' ),
+    'singular_name'         => _x( 'portfolio piece', 'Post Type Singular Name', 'text_domain' ),
+    'menu_name'             => __( 'Portfolio', 'text_domain' ),
+    'name_admin_bar'        => __( 'Portfolio', 'text_domain' ),
+    'archives'              => __( 'piece Archives', 'text_domain' ),
+    'attributes'            => __( 'piece Attributes', 'text_domain' ),
+    'parent_item_colon'     => __( 'Parent Item:', 'text_domain' ),
+    'all_items'             => __( 'All Items', 'text_domain' ),
+    'add_new_item'          => __( 'Add New Item', 'text_domain' ),
+    'add_new'               => __( 'Add New Portfolio Piece', 'text_domain' ),
+    'new_item'              => __( 'New Portfolio Piece', 'text_domain' ),
+    'edit_item'             => __( 'Edit Portfolio Piece', 'text_domain' ),
+    'update_item'           => __( 'Update Portfolio Piece', 'text_domain' ),
+    'view_item'             => __( 'View Portfolio Piece', 'text_domain' ),
+    'view_items'            => __( 'View Portfolio Pieces', 'text_domain' ),
+    'search_items'          => __( 'Search Portfolio Pieces', 'text_domain' ),
+    'not_found'             => __( 'Not found', 'text_domain' ),
+    'not_found_in_trash'    => __( 'Not found in Trash', 'text_domain' ),
+    'featured_image'        => __( 'Featured Image', 'text_domain' ),
+    'set_featured_image'    => __( 'Set featured image', 'text_domain' ),
+    'remove_featured_image' => __( 'Remove featured image', 'text_domain' ),
+    'use_featured_image'    => __( 'Use as featured image', 'text_domain' ),
+    'insert_into_item'      => __( 'Insert into item', 'text_domain' ),
+    'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
+    'items_list'            => __( 'Items list', 'text_domain' ),
+    'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
+    'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+  );
+  $args = array(
+    'label'                 => __( 'portfolio piece', 'text_domain' ),
+    'description'           => __( 'portfolio entry', 'text_domain' ),
+    'labels'                => $labels,
+    'supports'              => array( 'title', 'editor', 'thumbnail', ),
+    'taxonomies'            => array( 'category', 'post_tag' ),
+    'hierarchical'          => false,
+    'public'                => true,
+    'show_ui'               => true,
+    'show_in_menu'          => true,
+    'menu_position'         => 5,
+    'show_in_admin_bar'     => true,
+    'show_in_nav_menus'     => true,
+    'can_export'            => true,
+    'has_archive'           => true,
+    'exclude_from_search'   => false,
+    'publicly_queryable'    => true,
+    'capability_type'       => 'page',
+  );
+  register_post_type( 'portfolio_piece', $args );
 
-
-// let's create the function for the custom type
-function custom_post_example() { 
-  // creating (registering) the custom type 
-  register_post_type( 'custom_type', /* (http://codex.wordpress.org/Function_Reference/register_post_type) */
-     // let's now add all the options for this post type
-    array('labels' => array(
-      'name' => __('Custom Types', 'juno'), /* This is the Title of the Group */
-      'singular_name' => __('Custom Post', 'juno'), /* This is the individual type */
-      'all_items' => __('All Custom Posts', 'juno'), /* the all items menu item */
-      'add_new' => __('Add New', 'juno'), /* The add new menu item */
-      'add_new_item' => __('Add New Custom Type', 'juno'), /* Add New Display Title */
-      'edit' => __( 'Edit', 'juno' ), /* Edit Dialog */
-      'edit_item' => __('Edit Post Types', 'juno'), /* Edit Display Title */
-      'new_item' => __('New Post Type', 'juno'), /* New Display Title */
-      'view_item' => __('View Post Type', 'juno'), /* View Display Title */
-      'search_items' => __('Search Post Type', 'juno'), /* Search Custom Type Title */ 
-      'not_found' =>  __('Nothing found in the Database.', 'juno'), /* This displays if there are no entries yet */ 
-      'not_found_in_trash' => __('Nothing found in Trash', 'juno'), /* This displays if there is nothing in the trash */
-      'parent_item_colon' => ''
-      ), /* end of arrays */
-      'description' => __( 'This is the example custom post type', 'juno' ), /* Custom Type Description */
-      'public' => true,
-      'publicly_queryable' => true,
-      'exclude_from_search' => false,
-      'show_ui' => true,
-      'query_var' => true,
-      'menu_position' => 8, /* this is what order you want it to appear in on the left hand side menu */ 
-      'menu_icon' => 'dashicons-book', /* the icon for the custom post type menu. uses built-in dashicons (CSS class name) */
-      'rewrite'  => array( 'slug' => 'custom_type', 'with_front' => false ), /* you can specify its url slug */
-      'has_archive' => 'custom_type', /* you can rename the slug here */
-      'capability_type' => 'post',
-      'hierarchical' => false,
-      /* the next one is important, it tells what's enabled in the post editor */
-      'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'trackbacks', 'custom-fields', 'comments', 'revisions', 'sticky')
-     ) /* end of options */
-  ); /* end of register post type */
-  
-  /* this adds your post categories to your custom post type */
-  register_taxonomy_for_object_type('category', 'custom_type');
-  /* this adds your post tags to your custom post type */
-  register_taxonomy_for_object_type('post_tag', 'custom_type');
-  
-} 
-
-  // adding the function to the Wordpress init
-  add_action( 'init', 'custom_post_example');
-  
-  /*
-  for more information on taxonomies, go here:
-  http://codex.wordpress.org/Function_Reference/register_taxonomy
-  */
-  
-  // now let's add custom categories (these act like categories)
-  register_taxonomy( 'custom_cat', 
-    array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
-    array('hierarchical' => true,     /* if this is true, it acts like categories */             
-      'labels' => array(
-        'name' => __( 'Custom Categories', 'juno' ), /* name of the custom taxonomy */
-        'singular_name' => __( 'Custom Category', 'juno' ), /* single taxonomy name */
-        'search_items' =>  __( 'Search Custom Categories', 'juno' ), /* search title for taxomony */
-        'all_items' => __( 'All Custom Categories', 'juno' ), /* all title for taxonomies */
-        'parent_item' => __( 'Parent Custom Category', 'juno' ), /* parent title for taxonomy */
-        'parent_item_colon' => __( 'Parent Custom Category:', 'juno' ), /* parent taxonomy title */
-        'edit_item' => __( 'Edit Custom Category', 'juno' ), /* edit custom taxonomy title */
-        'update_item' => __( 'Update Custom Category', 'juno' ), /* update title for taxonomy */
-        'add_new_item' => __( 'Add New Custom Category', 'juno' ), /* add new title for taxonomy */
-        'new_item_name' => __( 'New Custom Category Name', 'juno' ) /* name title for taxonomy */
-      ),
-      'show_admin_column' => true, 
-      'show_ui' => true,
-      'query_var' => true,
-      'rewrite' => array( 'slug' => 'custom-slug' ),
-    )
-  );   
-    
-  // now let's add custom tags (these act like categories)
-  register_taxonomy( 'custom_tag', 
-    array('custom_type'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
-    array('hierarchical' => false,    /* if this is false, it acts like tags */                
-      'labels' => array(
-        'name' => __( 'Custom Tags', 'juno' ), /* name of the custom taxonomy */
-        'singular_name' => __( 'Custom Tag', 'juno' ), /* single taxonomy name */
-        'search_items' =>  __( 'Search Custom Tags', 'juno' ), /* search title for taxomony */
-        'all_items' => __( 'All Custom Tags', 'juno' ), /* all title for taxonomies */
-        'parent_item' => __( 'Parent Custom Tag', 'juno' ), /* parent title for taxonomy */
-        'parent_item_colon' => __( 'Parent Custom Tag:', 'juno' ), /* parent taxonomy title */
-        'edit_item' => __( 'Edit Custom Tag', 'juno' ), /* edit custom taxonomy title */
-        'update_item' => __( 'Update Custom Tag', 'juno' ), /* update title for taxonomy */
-        'add_new_item' => __( 'Add New Custom Tag', 'juno' ), /* add new title for taxonomy */
-        'new_item_name' => __( 'New Custom Tag Name', 'juno' ) /* name title for taxonomy */
-      ),
-      'show_admin_column' => true,
-      'show_ui' => true,
-      'query_var' => true,
-    )
-  ); 
-  
-  /*
-    looking for custom meta boxes?
-    check out this fantastic tool:
-    https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress
-  */
+}
+add_action( 'init', 'custom_post_type', 0 );

@@ -7,7 +7,7 @@
 		"uuidString": "FAD9B338-9C3D-4629-9B6E-DD33E1975550"
 		}
 	],
-"creatorBuild": "25504",
+"creatorBuild": "25568",
 "files": {
 	"\/404.php": {
 		"ft": 8192,
@@ -319,6 +319,12 @@
 		"oAP": "\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_cart.scssc",
 		"oF": 0
 		},
+	"\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_checkout.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_checkout.scssc",
+		"oF": 0
+		},
 	"\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_home-updates.scssc": {
 		"ft": 8192,
 		"oA": 1,
@@ -331,6 +337,12 @@
 		"oAP": "\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_home.scssc",
 		"oF": 0
 		},
+	"\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_portfolio.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_portfolio.scssc",
+		"oF": 0
+		},
 	"\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_post.scssc": {
 		"ft": 8192,
 		"oA": 1,
@@ -341,6 +353,12 @@
 		"ft": 8192,
 		"oA": 1,
 		"oAP": "\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_shop.scssc",
+		"oF": 0
+		},
+	"\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_updates.scssc": {
+		"ft": 8192,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/.sass-cache\/9ee64c0c69a31b2c7635be99553ff68689838d69\/_updates.scssc",
 		"oF": 0
 		},
 	"\/assets\/sass\/.sass-cache\/9f575d673adfce0494dbd50d4840cc7bfd72a783\/_button.scssc": {
@@ -497,7 +515,7 @@
 		"oS": 0,
 		"uL": 1
 		},
-	"\/assets\/sass\/pages\/_home-updates.scss": {
+	"\/assets\/sass\/pages\/_checkout.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
@@ -505,7 +523,33 @@
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
-		"oAP": "\/assets\/sass\/pages\/_home-updates.css",
+		"oAP": "\/assets\/sass\/pages\/_checkout.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/pages\/_home.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/pages\/_home.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/pages\/_portfolio.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/pages\/_portfolio.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -532,6 +576,19 @@
 		"ma": 0,
 		"oA": 1,
 		"oAP": "\/assets\/sass\/pages\/_shop.css",
+		"oF": 0,
+		"oS": 0,
+		"uL": 1
+		},
+	"\/assets\/sass\/pages\/_updates.scss": {
+		"aP": 0,
+		"bl": 0,
+		"dP": 10,
+		"dS": 0,
+		"ft": 4,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "\/assets\/sass\/pages\/_updates.css",
 		"oF": 0,
 		"oS": 0,
 		"uL": 1
@@ -706,6 +763,12 @@
 		"ft": 8192,
 		"oA": 2,
 		"oAP": "\/template-home.php",
+		"oF": 0
+		},
+	"\/template-portfolio.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/template-portfolio.php",
 		"oF": 0
 		},
 	"\/template-updates.php": {
@@ -2399,6 +2462,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-multi-assign": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-multi-spaces": {
 			"active": 0,
 			"optionString": "{'exceptions': {'Property': true, 'BinaryExpression': false, 'VariableDeclarator': false, 'ImportDeclaration': false}}"
@@ -2727,6 +2794,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
+			},
 		"prefer-rest-params": {
 			"active": 0,
 			"optionString": ""
@@ -2820,6 +2891,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},

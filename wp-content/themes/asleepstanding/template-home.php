@@ -1,4 +1,4 @@
-<?php /* Template Name: Home */ get_header(); ?>
+<?php /* Template Name: Template-Home */ get_header(); ?>
 
   <main role="main" class="home-updates">
 

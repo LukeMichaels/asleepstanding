@@ -24,6 +24,9 @@ require_once(get_template_directory().'/assets/functions/enqueue-scripts.php');
 require_once(get_template_directory().'/assets/functions/menu.php');
 //require_once(get_template_directory().'/assets/functions/menu-walkers.php');
 
+// Add custom post type(s)
+require_once(get_template_directory().'/assets/functions/custom-post-type.php');
+
 // Replace 'older/newer' post links with numbered navigation
 require_once(get_template_directory().'/assets/functions/page-navi.php');
 
